@@ -258,3 +258,4 @@ class FirebaseRestService implements ApiService {
     await _cache.deleteSkill(id);
   }
 }
+

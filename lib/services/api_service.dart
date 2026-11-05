@@ -26,3 +26,4 @@ abstract class ApiService {
   Future<SkillItem> updateSkill(SkillItem item);
   Future<void> deleteSkill(String id);
 }
+

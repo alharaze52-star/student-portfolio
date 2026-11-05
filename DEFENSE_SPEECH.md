@@ -66,3 +66,4 @@
 
 **В: Как работает сборка под iPhone на GitHub Actions?**  
 *О:* В репозитории настроен GitHub Actions Workflow (`.github/workflows/ios-build.yml`), запускающийся на облачной виртуальной машине macOS. В процессе раннер скачивает Flutter SDK, выполняет `flutter pub get`, прогоняет тесты и собирает iOS-пакет с помощью команды `flutter build ios --release --no-codesign`, упаковывая готовый билд в артефакты сборки.
+

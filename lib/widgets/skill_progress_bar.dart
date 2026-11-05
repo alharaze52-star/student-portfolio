@@ -128,3 +128,4 @@ class SkillProgressBar extends StatelessWidget {
     );
   }
 }
+

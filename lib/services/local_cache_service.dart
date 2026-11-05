@@ -296,3 +296,4 @@ class LocalCacheService implements ApiService {
     await prefs.setString(_keySkills, jsonEncode(list.map((e) => e.toJson()).toList()));
   }
 }
+

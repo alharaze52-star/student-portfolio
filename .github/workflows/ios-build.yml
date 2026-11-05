@@ -42,8 +42,11 @@ jobs:
       - name: Package iOS Payload (Simulator / Ad-hoc IPA)
         run: |
           mkdir -p Payload
-          cp -r build/ios/iphoneos/Runner.app Payload/
+          APP_PATH=$(find build/ios -name "*.app" -type d | head -n 1)
+          echo "Found app at: $APP_PATH"
+          cp -r "$APP_PATH" Payload/
           zip -r StudentPortfolio_iOS.zip Payload/
+          mkdir -p build/ios
           mv StudentPortfolio_iOS.zip build/ios/
 
       - name: Upload iOS Build Artifact

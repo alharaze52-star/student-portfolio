@@ -225,3 +225,4 @@ class ProjectDetailScreen extends StatelessWidget {
     );
   }
 }
+

@@ -361,3 +361,4 @@ class PortfolioProvider extends ChangeNotifier {
     }).toList();
   }
 }
+

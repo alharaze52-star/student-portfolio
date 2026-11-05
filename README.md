@@ -181,3 +181,4 @@ npm test
    - Проверяются тесты (`flutter test`).
    - Собирается iOS-пакет (`flutter build ios --release --no-codesign`).
    - Пакуется артефакт `student-portfolio-ios-release` (`StudentPortfolio_iOS.zip`), который можно скачать прямо со страницы сборки!
+

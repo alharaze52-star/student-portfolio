@@ -30,3 +30,4 @@ class ThemeProvider extends ChangeNotifier {
     } catch (_) {}
   }
 }
+

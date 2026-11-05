@@ -74,7 +74,7 @@ class SkillsScreen extends StatelessWidget {
                     decoration: const InputDecoration(labelText: 'Категория'),
                     items: ['Hard Skills', 'Soft Skills', 'Инструменты', 'Языки'].map((c) {
                       return DropdownMenuItem(value: c, child: Text(c));
-                    }).toList>,
+                    }).toList(),
                     onChanged: (val) {
                       if (val != null) setDialogState(() => category = val);
                     },
@@ -216,3 +216,4 @@ class SkillsScreen extends StatelessWidget {
     );
   }
 }
+

@@ -393,7 +393,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 const Divider(height: 1),
                 ListTile(
-                  leading: const Icon(Icons.file_download_outlined, color: Colors.emerald ?? Colors.green),
+                  leading: const Icon(Icons.file_download_outlined, color: Color(0xFF10B981)),
                   title: const Text('Экспорт сводки портфолио'),
                   subtitle: const Text('Сформировать текст для резюме / защиты проекта'),
                   trailing: const Icon(Icons.chevron_right),
@@ -422,3 +422,4 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
+
