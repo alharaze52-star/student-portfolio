@@ -1,0 +1,54 @@
+name: Build iOS Application
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-ios:
+    name: Build iOS App (iPhone)
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.x'
+          channel: 'stable'
+          cache: true
+
+      - name: Verify Flutter & Dart
+        run: |
+          flutter doctor -v
+
+      - name: Install dependencies
+        run: |
+          flutter pub get
+
+      - name: Run unit & widget tests
+        run: |
+          flutter test
+
+      - name: Build iOS Application (no code signing)
+        run: |
+          flutter build ios --release --no-codesign
+
+      - name: Package iOS Payload (Simulator / Ad-hoc IPA)
+        run: |
+          mkdir -p Payload
+          cp -r build/ios/iphoneos/Runner.app Payload/
+          zip -r StudentPortfolio_iOS.zip Payload/
+          mv StudentPortfolio_iOS.zip build/ios/
+
+      - name: Upload iOS Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: student-portfolio-ios-release
+          path: build/ios/StudentPortfolio_iOS.zip
+          retention-days: 14
