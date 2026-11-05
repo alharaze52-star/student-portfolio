@@ -5,6 +5,8 @@
 .packages
 build/
 *.lock
+*.ipa
+*.apk
 
 # Node.js
 backend/node_modules/
