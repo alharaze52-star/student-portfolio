@@ -50,13 +50,13 @@ jobs:
           APP_PATH=$(find build/ios -name "*.app" -type d | head -n 1)
           echo "Found compiled app at: $APP_PATH"
           cp -r "$APP_PATH" Payload/
-          zip -r StudentPortfolio_iOS.zip Payload/
+          zip -r StudentPortfolio.ipa Payload/
           mkdir -p build/ios
-          mv StudentPortfolio_iOS.zip build/ios/
+          mv StudentPortfolio.ipa build/ios/
 
       - name: Upload iOS Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: student-portfolio-ios-release
-          path: build/ios/StudentPortfolio_iOS.zip
+          name: student-portfolio-ipa
+          path: build/ios/StudentPortfolio.ipa
           retention-days: 14
