@@ -26,7 +26,7 @@ jobs:
       - name: Recreate iOS platform files with official Flutter scaffolding
         run: |
           rm -rf ios
-          flutter create --platforms=ios --org com.example .
+          flutter create --platforms=ios --project-name student_portfolio --org com.example .
 
       - name: Verify Flutter & Dart
         run: |
