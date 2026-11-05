@@ -23,6 +23,11 @@ jobs:
           channel: 'stable'
           cache: true
 
+      - name: Recreate iOS platform files with official Flutter scaffolding
+        run: |
+          rm -rf ios
+          flutter create --platforms=ios --org com.example .
+
       - name: Verify Flutter & Dart
         run: |
           flutter doctor -v
@@ -43,7 +48,7 @@ jobs:
         run: |
           mkdir -p Payload
           APP_PATH=$(find build/ios -name "*.app" -type d | head -n 1)
-          echo "Found app at: $APP_PATH"
+          echo "Found compiled app at: $APP_PATH"
           cp -r "$APP_PATH" Payload/
           zip -r StudentPortfolio_iOS.zip Payload/
           mkdir -p build/ios
